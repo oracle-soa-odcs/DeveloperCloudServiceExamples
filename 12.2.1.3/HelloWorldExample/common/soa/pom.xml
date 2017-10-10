@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.myCompany.myApplication</groupId>
+    <artifactId>CommonSoaPom</artifactId>
+    <version>${soaArtifactVersion}</version>
+    <packaging>pom</packaging>
+
+    <description/>
+
+    <properties>
+    </properties>
+
+    <parent>
+        <groupId>com.myCompany.myApplication</groupId>
+        <artifactId>CommonSoaOsbPom</artifactId>
+        <version>${soaArtifactVersion}</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <build>
+        <finalName>sca_${composite.name}_rev${composite.revision}</finalName>
+
+        <plugins>
+            <plugin>
+                <groupId>com.google.code.maven-replacer-plugin</groupId>
+                <artifactId>replacer</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>com.oracle.soa.plugin</groupId>
+                <artifactId>oracle-soa-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+    </profiles>
+</project>
